@@ -1,0 +1,42 @@
+<%- include("_header") -%>
+
+<h1>법인카드 관리대장 (<%= model.length %>)</h1>
+
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>사용일</th>
+        <th>반납일</th>
+        <th>사용자</th>
+        <th>사용처</th>
+        <th>사용내역</th>
+        <th>지출금액</th>
+        <th>비고</th>
+        <th>서명</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/create">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const card of model) { %>
+        <tr>
+          <td><%= card.date_of_use %></td>
+          <td><%= card.return_date %></td>
+          <td><%= card.user %></td>
+          <td><%= card.where_to_use %></td>
+          <td><%= card.usage_history %></td>
+          <td><%= card.amount %></td>
+          <td><%= card.note %></td>
+          <td><%= card.signature %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+
+
+

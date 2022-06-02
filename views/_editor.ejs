@@ -1,0 +1,59 @@
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="date_of_use">사용일</label>
+    <div class="col-sm-8">
+      <input type="datetime-local" autofocus class="form-control" name="date_of_use" value="<%= model.date_of_use %>" >
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="return_date">반납일</label>
+    <div class="col-sm-7">
+      <input type="datetime-local" class="form-control" name="return_date" value="<%= model.return_date %>" >
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="user">사용자</label>
+    <div class="col-sm-10">
+      <input class="form-control" name="user" value="<%= model.user %>" >
+    </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="where_to_use">사용처</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="where_to_use" value="<%= model.where_to_use %>" >
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="usage_history">사용내역</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="usage_history" value="<%= model.usage_history %>" >
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="amount">지출금액</label>
+  <div class="col-sm-7">
+    <input type="number" class="form-control" name="amount" value="<%= model.amount %>" >
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="note">비고</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="note" value="<%= model.note %>" >
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="signature">서명</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="signature" value="<%= model.signature %>" >
+  </div>
+</div>
