@@ -4,6 +4,7 @@ const express = require("express"); // express module을 import한다는 의미
 const ejs = require("ejs");
 const path = require("path");
 const sqlite3 = require("sqlite3").verbose();
+var moment = require('moment');
 
 // express server와 연결하기 전에 데이터베이스와 연결함
 // 데이터베이스는 data폴더에 apptest.db의 이름으로 저장됨.
@@ -93,7 +94,7 @@ app.get("/books", (req, res) => {
     if(err) {
       return console.error(err.message);
     }
-    res.render("book", {model: rows});
+    res.render("book", {model: rows, moment: moment});
   });
 });
 
