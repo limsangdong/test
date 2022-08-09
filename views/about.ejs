@@ -1,6 +1,42 @@
 <%- include("_header") -%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script> 
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=87b6b4c81f2798bff1bc812443e3a6a7&libraries=services"></script>
+<form method="post">
+    <div class="input-group">
+      <select class="form-control"  placeholder="Search">
+        <option value="분식">분식</option>
+        <option value="한식">한식</option>
+        <option value="일식">일식</option>
+      </select>
+      <div class="input-group-btn">
+        <button class="btn btn-default btn-success" type="submit"  onclick="action='/dateBooks'">
+         검색
+        </button>
+        <a class="btn btn-default btn-success" href="/createproduct">등록</a>    
+      </div>
+    </div>
+    </form>
 
-<h1>About AppTest</h1>
-<h3>Sqlite, NodeJs, Express를 이용한 CRUD게시판 만들기. :D</h3>
+<div id="map" style="width: 1100px;height: 800px;"></div>
 
+<script>
+
+    navigator.geolocation.getCurrentPosition(function(pos) {
+    var latitude = pos.coords.latitude;
+    var longitude = pos.coords.longitude;
+    let container = document.getElementById('map');
+    let options = {
+        center : new kakao.maps.LatLng(latitude, longitude),
+        level : 3
+    };
+    let map = new kakao.maps.Map(container, options)
+});
+</script>
+</body>
+</html>
 <%- include("_footer") -%>

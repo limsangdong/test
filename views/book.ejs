@@ -1,6 +1,7 @@
 <%- include("_header") -%>
 
-<h1>법인카드 관리대장 (<%= model.length %>) 
+<h1>법인카드 관리대장 (<%= model.length%> %>) /
+   총사용금액 : <%= sumAmount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")%>원
   
   <form method="post">
     <div class="input-group">
@@ -39,7 +40,7 @@
           <td><%= moment(card.date_of_use).format('YY-MM-DD HH:mm') %></td>
           <td><%= card.user %></td>
           <td><%= card.usage_history %></td>
-          <td><%= card.amount %></td>
+          <td><%= card.amount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); %>원</td>
         </tr>
       <% } %>
     </tbody>
