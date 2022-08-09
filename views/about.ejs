@@ -26,16 +26,13 @@
 
 <script>
 
-    navigator.geolocation.getCurrentPosition(function(pos) {
-    var latitude = pos.coords.latitude;
-    var longitude = pos.coords.longitude;
     let container = document.getElementById('map');
     let options = {
-        center : new kakao.maps.LatLng(latitude, longitude),
+        center : new kakao.maps.LatLng(37.441112, 126.7094951),
         level : 3
     };
     let map = new kakao.maps.Map(container, options)
-});
+
 </script>
 </body>
 </html>
